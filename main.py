@@ -1,7 +1,7 @@
 import sys
 import os
 import re
-
+import csv
 # Ensure the correct import path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -72,7 +72,8 @@ class AppCLI:
             self.update_stock()
         elif action == "View low stock report":
             self.view_low_stock()
-
+        elif action == "Export inventory to CSV":
+            self.export_to_csv()
         elif action == "Logout":
             self.current_user = None
             print("Logged out successfully.")
