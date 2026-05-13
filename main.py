@@ -43,7 +43,8 @@ class AppCLI:
             print("\n--- Main Menu ---")
             options = self.current_user.get_menu_options()
 
-            
+            if "Export inventory to CSV" not in options:
+                options.insert(-2, "Export inventory to CSV")
             for i, opt in enumerate(options, 1):
                 print(f"{i}. {opt}")
 
